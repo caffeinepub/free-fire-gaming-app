@@ -1,0 +1,107 @@
+{
+  "kind": "feature_evidence_report",
+  "features": [
+    {
+      "featureId": "feature-create-a-3d-first-person-shooter-game-environment-using-three-js-with-react-three-fiber-that-resembles-classic-doom-aesthetics-retro-sci-fi-corridors-industrial-textures-dark-atmospheric-lighting",
+      "featureTitle": "Create a 3D first-person shooter game environment using Three.js with React Three Fiber that resembles classic Doom aesthetics (retro sci-fi corridors, industrial textures, dark atmospheric lighting)",
+      "files": [
+        "frontend/src/App.tsx",
+        "frontend/src/components/Game/FirstPersonControls.tsx",
+        "frontend/src/components/Game/GameArena.tsx",
+        "frontend/src/components/Game/GameScene.tsx",
+        "frontend/src/pages/GamePage.tsx"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-1"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-implement-player-combat-mechanics-with-shooting-functionality-that-allows-players-to-eliminate-opponents",
+      "featureTitle": "Implement player combat mechanics with shooting functionality that allows players to eliminate opponents",
+      "files": [
+        "frontend/src/components/Game/CombatEffects.tsx",
+        "frontend/src/components/Game/PlayerHUD.tsx",
+        "frontend/src/components/Game/WeaponSystem.tsx",
+        "frontend/src/hooks/usePlayerState.ts"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-2"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-implement-revive-respawn-system-that-allows-eliminated-players-to-return-to-the-game",
+      "featureTitle": "Implement revive/respawn system that allows eliminated players to return to the game",
+      "files": [
+        "frontend/src/components/Game/DeathScreen.tsx",
+        "frontend/src/hooks/useRespawn.ts"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-3"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-create-battle-royale-game-loop-with-match-start-player-elimination-tracking-and-victory-conditions",
+      "featureTitle": "Create battle royale game loop with match start, player elimination tracking, and victory conditions",
+      "files": [
+        "frontend/src/components/Game/Leaderboard.tsx"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-4"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-design-a-dark-industrial-visual-theme-with-neon-accent-colors-red-orange-green-reminiscent-of-classic-doom-using-bold-typography-and-atmospheric-lighting-effects-throughout-the-ui-and-game-environment",
+      "featureTitle": "Design a dark, industrial visual theme with neon accent colors (red, orange, green) reminiscent of classic Doom, using bold typography and atmospheric lighting effects throughout the UI and game environment",
+      "files": [
+        "frontend/src/App.tsx",
+        "frontend/src/components/Layout/GameLayout.tsx",
+        "frontend/src/components/UI/DoomButton.tsx",
+        "frontend/src/index.css",
+        "frontend/tailwind.config.js"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-6"
+      ],
+      "confidence": "high"
+    }
+  ]
+}

@@ -1,0 +1,86 @@
+{
+  "schemaVersion": "1.0.0",
+  "projectStateVersion": 3,
+  "summary": "A web-based Doom-style Battle Royale game with kill and revive mechanics",
+  "architectural_notes": [
+    "Web-based game for browser compatibility (Chrome, Firefox, Safari)",
+    "Must work on both mobile and desktop devices"
+  ],
+  "known_issues": [],
+  "isFixRequest": false,
+  "imageRequirements": "## Required Images\n- Retro sci-fi corridor texture with industrial pipes and panels for game walls (wall-texture.dim_512x512.png)\n- Dark metallic floor texture with grated metal pattern (floor-texture.dim_512x512.png)\n- Neon red crosshair reticle for weapon aiming (crosshair.dim_64x64.png)\n- Stylized weapon icon showing futuristic gun for UI (weapon-icon.dim_128x128.png)\n- Health bar background with damaged metal effect (health-bg.dim_256x64.png)\n- Doom-style logo with aggressive angular letters and red glow effect (logo.dim_400x150.png)",
+  "existing_features": [
+    {
+      "id": "feature-create-a-3d-first-person-shooter-game-environment-using-three-js-with-react-three-fiber-that-resembles-classic-doom-aesthetics-retro-sci-fi-corridors-industrial-textures-dark-atmospheric-lighting",
+      "title": "Create a 3D first-person shooter game environment using Three.js with React Three Fiber that resembles classic Doom aesthetics (retro sci-fi corridors, industrial textures, dark atmospheric lighting)",
+      "reqIds": [
+        "REQ-1"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-implement-player-combat-mechanics-with-shooting-functionality-that-allows-players-to-eliminate-opponents",
+      "title": "Implement player combat mechanics with shooting functionality that allows players to eliminate opponents",
+      "reqIds": [
+        "REQ-2"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-implement-revive-respawn-system-that-allows-eliminated-players-to-return-to-the-game",
+      "title": "Implement revive/respawn system that allows eliminated players to return to the game",
+      "reqIds": [
+        "REQ-3"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-create-battle-royale-game-loop-with-match-start-player-elimination-tracking-and-victory-conditions",
+      "title": "Create battle royale game loop with match start, player elimination tracking, and victory conditions",
+      "reqIds": [
+        "REQ-4"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-design-a-dark-industrial-visual-theme-with-neon-accent-colors-red-orange-green-reminiscent-of-classic-doom-using-bold-typography-and-atmospheric-lighting-effects-throughout-the-ui-and-game-environment",
+      "title": "Design a dark, industrial visual theme with neon accent colors (red, orange, green) reminiscent of classic Doom, using bold typography and atmospheric lighting effects throughout the UI and game environment",
+      "reqIds": [
+        "REQ-6"
+      ],
+      "version": 1
+    }
+  ],
+  "new_feature_requests": [
+    {
+      "id": "AR-1",
+      "summary": "Doom-style Battle Royale game",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-2",
+      "summary": "Kill mechanics for combat",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-3",
+      "summary": "Revive/respawn mechanics",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-8",
+      "summary": "Implement player state management on backend to track health, position, eliminations, and match status",
+      "reqIds": [
+        "REQ-5"
+      ],
+      "status": "pending"
+    }
+  ],
+  "gameProjectType": "3d",
+  "projectName": "Doom Battle Royale",
+  "clarification_mode": "instant",
+  "clarification_rounds": 0
+}

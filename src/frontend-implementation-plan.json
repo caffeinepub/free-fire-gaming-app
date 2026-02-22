@@ -1,0 +1,172 @@
+{
+  "kind": "implementation_plan",
+  "version": "1.0",
+  "title": "Doom Battle Royale - Frontend Implementation Plan",
+  "requirements": [
+    {
+      "id": "REQ-1",
+      "summary": "Create 3D first-person shooter game environment with Doom aesthetics using React Three Fiber",
+      "acceptanceCriteria": [
+        "Game renders in 3D first-person perspective",
+        "Environment includes multiple rooms or areas for battle royale gameplay",
+        "Visual style matches Doom-inspired retro FPS aesthetic",
+        "Player can move using keyboard controls (WASD)"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/components/Game/GameScene.tsx",
+          "operation": "create",
+          "description": "Create main 3D game scene component using React Three Fiber. Implement first-person camera controls with WASD movement. Render arena environment with multiple battle areas. Apply generated textures from frontend/public/assets/generated/wall-texture.dim_512x512.png and frontend/public/assets/generated/floor-texture.dim_512x512.png for industrial sci-fi aesthetic. Include atmospheric lighting with dark tones."
+        },
+        {
+          "path": "frontend/src/components/Game/GameArena.tsx",
+          "operation": "create",
+          "description": "Create arena geometry component defining the battle royale map layout with multiple rooms, corridors, and combat zones. Apply industrial textures to walls and floors using the generated texture assets. Implement collision boundaries for player movement."
+        },
+        {
+          "path": "frontend/src/components/Game/FirstPersonControls.tsx",
+          "operation": "create",
+          "description": "Create first-person camera controls component handling WASD keyboard input for player movement and mouse input for looking around. Implement smooth camera rotation and position updates synchronized with player state."
+        },
+        {
+          "path": "frontend/src/pages/GamePage.tsx",
+          "operation": "create",
+          "description": "Create main game page that hosts the Canvas component from React Three Fiber and renders GameScene. Include game UI overlays (HUD, health bar, crosshair). Wire in player state management and backend connection for match participation."
+        },
+        {
+          "path": "frontend/src/App.tsx",
+          "operation": "modify",
+          "description": "Add route for /game that renders GamePage component. Include navigation from landing page to game start."
+        }
+      ]
+    },
+    {
+      "id": "REQ-2",
+      "summary": "Implement player combat mechanics with shooting functionality",
+      "acceptanceCriteria": [
+        "Player can aim and shoot using mouse controls",
+        "Weapons deal damage to other players",
+        "Visual feedback for hits and eliminations",
+        "Health system tracks player damage"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/components/Game/WeaponSystem.tsx",
+          "operation": "create",
+          "description": "Create weapon system component handling shooting mechanics with mouse click input. Implement raycasting for hit detection against other players. Display weapon icon using frontend/public/assets/generated/weapon-icon.dim_128x128.png. Call backend shoot method when firing at targets. Show visual feedback for successful hits."
+        },
+        {
+          "path": "frontend/src/components/Game/PlayerHUD.tsx",
+          "operation": "create",
+          "description": "Create heads-up display component showing player health bar with background using frontend/public/assets/generated/health-bg.dim_256x64.png. Display crosshair at screen center using frontend/public/assets/generated/crosshair.dim_64x64.png. Show current weapon status and ammo count. Update health display based on backend player state."
+        },
+        {
+          "path": "frontend/src/hooks/usePlayerState.ts",
+          "operation": "create",
+          "description": "Create hook to manage player state including health, alive status, and score. Fetch player data from backend using getOrCreatePlayer and getAllPlayers methods. Handle real-time state updates during combat. Provide methods to trigger shooting actions via backend shoot function."
+        },
+        {
+          "path": "frontend/src/components/Game/CombatEffects.tsx",
+          "operation": "create",
+          "description": "Create visual effects component for combat feedback including muzzle flashes, hit indicators, and damage overlays. Show elimination notifications when players are killed. Use neon red/orange colors matching Doom aesthetic."
+        }
+      ]
+    },
+    {
+      "id": "REQ-3",
+      "summary": "Implement revive/respawn system for eliminated players",
+      "acceptanceCriteria": [
+        "Eliminated players can respawn after a delay or trigger",
+        "Respawn location is clearly defined",
+        "Player retains or resets appropriate game state on revival",
+        "UI clearly indicates when revival is available"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/components/Game/RespawnSystem.tsx",
+          "operation": "create",
+          "description": "Create respawn system component managing player revival mechanics. Display respawn countdown timer when player is eliminated. Show respawn UI with revive button calling backend revive method. Teleport player to designated spawn point after revival. Reset health and weapon state appropriately."
+        },
+        {
+          "path": "frontend/src/components/Game/DeathScreen.tsx",
+          "operation": "create",
+          "description": "Create death screen overlay displayed when player health reaches zero. Show elimination statistics, killer information, and respawn timer. Include respawn button that triggers backend revive function. Use dark atmospheric styling with neon red accents."
+        },
+        {
+          "path": "frontend/src/hooks/useRespawn.ts",
+          "operation": "create",
+          "description": "Create hook managing respawn logic including countdown timer, respawn availability checking, and backend revive method invocation. Track player alive status from backend and trigger UI updates accordingly."
+        }
+      ]
+    },
+    {
+      "id": "REQ-4",
+      "summary": "Create battle royale game loop with match flow and victory conditions",
+      "acceptanceCriteria": [
+        "Match begins with multiple players in the arena",
+        "Game tracks eliminations and displays leaderboard",
+        "Clear victory condition when one player/team remains",
+        "Option to start new match after completion"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/components/Game/MatchManager.tsx",
+          "operation": "create",
+          "description": "Create match manager component controlling game loop states (waiting, active, ended). Display match start countdown and initialize player positions. Monitor match end conditions based on remaining alive players from backend. Show victory screen when match concludes."
+        },
+        {
+          "path": "frontend/src/components/Game/Leaderboard.tsx",
+          "operation": "create",
+          "description": "Create leaderboard component displaying player scores and elimination counts. Fetch all players from backend using getAllPlayers method. Show real-time rankings during match. Include player names, kills, and status (alive/eliminated). Style with dark theme and neon green accents."
+        },
+        {
+          "path": "frontend/src/components/Game/VictoryScreen.tsx",
+          "operation": "create",
+          "description": "Create victory screen displayed when match ends. Show winner information, final leaderboard, and match statistics. Include button to start new match that reinitializes game state. Use bold Doom-style typography with red/orange neon glow effects."
+        },
+        {
+          "path": "frontend/src/hooks/useMatchState.ts",
+          "operation": "create",
+          "description": "Create hook managing match state including current phase, player count, and win conditions. Poll backend for match status updates. Trigger UI transitions between lobby, active gameplay, and victory screens based on match progression."
+        }
+      ]
+    },
+    {
+      "id": "REQ-6",
+      "summary": "Design dark industrial visual theme with neon accents and Doom-inspired aesthetics",
+      "acceptanceCriteria": [
+        "Color palette uses dark backgrounds with neon accent colors",
+        "Typography reflects retro FPS game aesthetic",
+        "UI elements are consistent with chosen theme",
+        "Game environment lighting matches atmospheric style"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/index.css",
+          "operation": "modify",
+          "description": "Update global styles with dark industrial color palette using near-black backgrounds and neon red, orange, and green accent colors. Import bold retro gaming fonts for FPS aesthetic. Define CSS custom properties for theme colors. Add atmospheric gradient overlays and glow effects for UI elements."
+        },
+        {
+          "path": "frontend/tailwind.config.js",
+          "operation": "modify",
+          "description": "Extend Tailwind theme with custom colors for Doom aesthetic including dark-bg, neon-red, neon-orange, neon-green. Add custom font families for retro FPS typography. Configure glow and shadow utilities for neon lighting effects."
+        },
+        {
+          "path": "frontend/src/components/Layout/GameLayout.tsx",
+          "operation": "create",
+          "description": "Create layout component wrapping game pages with consistent dark industrial theme. Include game logo using frontend/public/assets/generated/logo.dim_400x150.png in header. Apply atmospheric background effects. Provide consistent styling container for all game UI elements."
+        },
+        {
+          "path": "frontend/src/components/UI/DoomButton.tsx",
+          "operation": "create",
+          "description": "Create reusable button component styled with Doom aesthetic featuring angular borders, neon glow effects on hover, and bold uppercase typography. Use theme colors for interactive states."
+        },
+        {
+          "path": "frontend/src/App.tsx",
+          "operation": "modify",
+          "description": "Wrap game routes with GameLayout component to apply consistent theming across all pages. Ensure logo and branding appear throughout navigation."
+        }
+      ]
+    }
+  ]
+}

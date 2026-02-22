@@ -1,0 +1,140 @@
+{
+  "kind": "build_request",
+  "title": "Create Doom Battle Royale game with kill and revive mechanics",
+  "projectName": "Doom Battle Royale",
+  "priority": "normal",
+  "requirements": [
+    {
+      "id": "REQ-1",
+      "text": "Create a 3D first-person shooter game environment using Three.js with React Three Fiber that resembles classic Doom aesthetics (retro sci-fi corridors, industrial textures, dark atmospheric lighting)",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-latest"
+        ],
+        "quotes": [
+          "Doom Battle Royale का गेम बनाओ"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Game renders in 3D first-person perspective",
+        "Environment includes multiple rooms or areas for battle royale gameplay",
+        "Visual style matches Doom-inspired retro FPS aesthetic",
+        "Player can move using keyboard controls (WASD)"
+      ]
+    },
+    {
+      "id": "REQ-2",
+      "text": "Implement player combat mechanics with shooting functionality that allows players to eliminate opponents",
+      "target": "both",
+      "source": {
+        "messageIds": [
+          "msg-latest"
+        ],
+        "quotes": [
+          "मालने का भी मुकबा मिले"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Player can aim and shoot using mouse controls",
+        "Weapons deal damage to other players",
+        "Visual feedback for hits and eliminations",
+        "Health system tracks player damage"
+      ]
+    },
+    {
+      "id": "REQ-3",
+      "text": "Implement revive/respawn system that allows eliminated players to return to the game",
+      "target": "both",
+      "source": {
+        "messageIds": [
+          "msg-latest"
+        ],
+        "quotes": [
+          "रिवाइब करने का भी मुकबा मिले"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Eliminated players can respawn after a delay or trigger",
+        "Respawn location is clearly defined",
+        "Player retains or resets appropriate game state on revival",
+        "UI clearly indicates when revival is available"
+      ]
+    },
+    {
+      "id": "REQ-4",
+      "text": "Create battle royale game loop with match start, player elimination tracking, and victory conditions",
+      "target": "both",
+      "source": {
+        "messageIds": [
+          "msg-latest"
+        ],
+        "quotes": [
+          "Doom Battle Royale का गेम बनाओ"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Match begins with multiple players in the arena",
+        "Game tracks eliminations and displays leaderboard",
+        "Clear victory condition when one player/team remains",
+        "Option to start new match after completion"
+      ]
+    },
+    {
+      "id": "REQ-5",
+      "text": "Implement player state management on backend to track health, position, eliminations, and match status",
+      "target": "backend",
+      "source": {
+        "messageIds": [
+          "msg-latest"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Backend stores player health and alive/dead status",
+        "Backend tracks elimination counts per player",
+        "Backend maintains current match state",
+        "Backend validates combat actions and respawns"
+      ]
+    },
+    {
+      "id": "REQ-6",
+      "text": "Design a dark, industrial visual theme with neon accent colors (red, orange, green) reminiscent of classic Doom, using bold typography and atmospheric lighting effects throughout the UI and game environment",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-latest"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Color palette uses dark backgrounds with neon accent colors",
+        "Typography reflects retro FPS game aesthetic",
+        "UI elements are consistent with chosen theme",
+        "Game environment lighting matches atmospheric style"
+      ]
+    }
+  ],
+  "constraints": [
+    "Must work in web browsers (Chrome, Firefox, Safari)",
+    "Must be playable on both desktop and mobile devices",
+    "No external game engine installations required",
+    "Use only Three.js with React Three Fiber for 3D rendering"
+  ],
+  "nonGoals": [
+    "Native mobile app development",
+    "Play Store or App Store distribution",
+    "Real-time multiplayer with WebSockets",
+    "Advanced physics engine integration",
+    "Voice chat or text chat features"
+  ],
+  "imageRequirements": {
+    "required": [
+      "Retro sci-fi corridor texture with industrial pipes and panels for game walls (wall-texture.dim_512x512.png)",
+      "Dark metallic floor texture with grated metal pattern (floor-texture.dim_512x512.png)",
+      "Neon red crosshair reticle for weapon aiming (crosshair.dim_64x64.png)",
+      "Stylized weapon icon showing futuristic gun for UI (weapon-icon.dim_128x128.png)",
+      "Health bar background with damaged metal effect (health-bg.dim_256x64.png)",
+      "Doom-style logo with aggressive angular letters and red glow effect (logo.dim_400x150.png)"
+    ],
+    "edits": []
+  }
+}

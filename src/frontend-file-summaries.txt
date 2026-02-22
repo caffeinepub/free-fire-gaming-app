@@ -1,0 +1,21 @@
+{
+  "frontend/src/App.tsx": "Main application component with TanStack Router setup, defining routes for landing page and game page, wrapped in GameLayout.",
+  "frontend/src/pages/LandingPage.tsx": "Landing page with Doom-style branding, game features showcase, and \"Enter Battle\" button to start the game.",
+  "frontend/src/pages/GamePage.tsx": "Main game page hosting the React Three Fiber Canvas with 3D scene, HUD overlays, death screen, and leaderboard.",
+  "frontend/src/components/Game/GameScene.tsx": "3D scene container managing lighting, fog, and all game components including arena, controls, weapons, and effects.",
+  "frontend/src/components/Game/GameArena.tsx": "3D arena geometry with textured walls, floor, and obstacles using generated industrial textures.",
+  "frontend/src/components/Game/FirstPersonControls.tsx": "First-person camera controls handling WASD movement, mouse look, and pointer lock for immersive gameplay.",
+  "frontend/src/components/Game/WeaponSystem.tsx": "Weapon system managing shooting mechanics with mouse click detection and fire rate limiting, with corrected import paths.",
+  "frontend/src/components/Game/CombatEffects.tsx": "Visual combat effects including muzzle flash lighting when shooting.",
+  "frontend/src/components/Game/PlayerHUD.tsx": "Heads-up display showing crosshair, health bar, score, and weapon icon overlaid on the 3D view.",
+  "frontend/src/components/Game/DeathScreen.tsx": "Full-screen overlay shown when player is eliminated, displaying score and respawn countdown with respawn button that properly wraps the mutation function.",
+  "frontend/src/components/Game/Leaderboard.tsx": "Real-time leaderboard showing all players sorted by score with alive/dead status indicators.",
+  "frontend/src/components/Layout/GameLayout.tsx": "Layout wrapper providing consistent structure and footer with attribution across all pages.",
+  "frontend/src/components/UI/DoomButton.tsx": "Custom button component with Doom aesthetic featuring angular clipped corners, neon glow effects, and bold styling.",
+  "frontend/src/hooks/usePlayerState.ts": "React Query hooks managing player state, initialization, shooting actions, and fetching all players from backend.",
+  "frontend/src/hooks/useRespawn.ts": "Hook managing respawn logic with countdown timer and backend revive method invocation.",
+  "frontend/src/hooks/useQueries.ts": "Placeholder file for additional queries (game-specific queries are in usePlayerState.ts and useRespawn.ts).",
+  "frontend/src/lib/utils.ts": "Utility function for merging Tailwind CSS classes using clsx and tailwind-merge.",
+  "frontend/src/index.css": "Global styles with Doom-themed OKLCH color system, custom fonts (Orbitron, Rajdhani), and utility classes for neon effects.",
+  "frontend/tailwind.config.js": "Tailwind configuration extended with Doom color palette, custom fonts, neon shadows, and angular clip-path utilities."
+}

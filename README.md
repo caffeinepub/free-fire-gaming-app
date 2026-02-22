@@ -1,2 +1,3 @@
-# free-fire-gaming-app
-Exported from Caffeine project: Free Fire Gaming App
+## Doom Battle Royale
+
+To run app build and run docker image: `docker build -t app . docker run -it --network host app`
